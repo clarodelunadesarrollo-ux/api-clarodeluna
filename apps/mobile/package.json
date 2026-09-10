@@ -1,0 +1,45 @@
+{
+  "name": "@claro-de-luna/mobile",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@claro-de-luna/shared": "*",
+    "@hookform/resolvers": "^5.9.1",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/datetimepicker": "9.1.0",
+    "@react-navigation/bottom-tabs": "^7.18.18",
+    "@react-navigation/native": "^7.3.18",
+    "@react-navigation/native-stack": "^7.18.10",
+    "@tanstack/react-query": "^5.102.8",
+    "expo": "~57.0.21",
+    "expo-build-properties": "~57.0.17",
+    "expo-camera": "~57.0.4",
+    "expo-file-system": "~57.0.6",
+    "expo-image-picker": "~57.0.16",
+    "expo-linear-gradient": "~57.0.1",
+    "expo-notifications": "~57.0.17",
+    "expo-secure-store": "~57.0.3",
+    "expo-splash-screen": "~57.0.8",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-hook-form": "^7.87.0",
+    "react-native": "0.86.3",
+    "react-native-qrcode-svg": "^6.3.24",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-svg": "^15.15.4",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  }
+}

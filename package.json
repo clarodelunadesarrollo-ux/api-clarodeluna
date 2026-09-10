@@ -1,0 +1,22 @@
+{
+  "name": "claro-de-luna",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "shared:build": "npm run build -w @claro-de-luna/shared",
+    "api:dev": "npm run start:dev -w @claro-de-luna/api",
+    "api:prisma:generate": "npm run prisma:generate -w @claro-de-luna/api",
+    "mobile:start": "npm run start -w @claro-de-luna/mobile"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "typescript": "~6.0.3"
+  }
+}

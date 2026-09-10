@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "target": "ES2021",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "5.0"
+  }
+}
