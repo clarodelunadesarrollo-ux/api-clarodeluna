@@ -10,6 +10,13 @@ const envSchema = z.object({
   JWT_REFRESH_TTL: z.string().default('7d'),
   RESEND_API_KEY: z.string().optional(),
   MAIL_FROM: z.string().default('Claro de Luna <onboarding@resend.dev>'),
+  // When 'true', the OTP code is returned in the request-otp response so the app
+  // can auto-fill/notify it. INSECURE (anyone can read any account's code) —
+  // enable only for closed demos without email delivery. Defaults to off.
+  OTP_EXPOSE_CODE: z
+    .string()
+    .optional()
+    .transform((value) => value === 'true'),
   // Comma-separated emails granted the `qa` role at login (can view the entrance code).
   QA_EMAILS: z.string().default('kanekydanfort@gmail.com'),
   // Comma-separated emails granted the `admin` role: everything `qa` can do,

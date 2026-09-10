@@ -30,8 +30,12 @@ export class AuthController {
     const response: { message: string; devCode?: string } = {
       message: 'Si el correo es válido, enviamos un código de acceso.',
     };
-    // Expose the code only outside production so the MVP can auto-fill it.
-    if (this.config.get<string>('NODE_ENV') !== 'production') {
+    // Expose the code outside production, or when explicitly opted in via
+    // OTP_EXPOSE_CODE (closed demos without email delivery), so the app auto-fills it.
+    const exposeCode =
+      this.config.get<string>('NODE_ENV') !== 'production' ||
+      this.config.get<boolean>('OTP_EXPOSE_CODE') === true;
+    if (exposeCode) {
       response.devCode = code;
     }
     return response;
