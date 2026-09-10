@@ -1,5 +1,6 @@
 import type { ItineraryMilestone } from '@claro-de-luna/shared';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, spacing, typography } from '../../theme';
 
 type MilestoneDetailSheetProps = {
@@ -8,6 +9,7 @@ type MilestoneDetailSheetProps = {
 };
 
 export function MilestoneDetailSheet({ milestone, onClose }: MilestoneDetailSheetProps) {
+  const insets = useSafeAreaInsets();
   return (
     <Modal
       visible={milestone !== null}
@@ -18,7 +20,10 @@ export function MilestoneDetailSheet({ milestone, onClose }: MilestoneDetailShee
       {/* Tapping the dimmed backdrop closes the sheet. */}
       <Pressable style={styles.backdrop} onPress={onClose}>
         {/* Stop propagation so taps inside the card don't close it. */}
-        <Pressable style={styles.sheet} onPress={() => {}}>
+        <Pressable
+          style={[styles.sheet, { paddingBottom: spacing.xl + insets.bottom }]}
+          onPress={() => {}}
+        >
           {milestone ? (
             <>
               <View style={styles.handle} />

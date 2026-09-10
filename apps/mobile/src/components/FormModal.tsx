@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 import {
-    KeyboardAvoidingView,
-    Modal,
-    Platform,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 import { colors, spacing, typography } from '../theme';
 
@@ -36,7 +36,7 @@ export function FormModal({
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onCancel}>
       <KeyboardAvoidingView
         style={styles.backdrop}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <View style={styles.sheet}>
           <Text style={styles.title}>{title}</Text>
